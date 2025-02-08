@@ -131,16 +131,30 @@
       color: #fff;
     }
 
-    footer {
-      background-color: #333;
-      color: #fff;
-      padding: 10px 0;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-      font-size: 0.9rem;
-    }
+      footer {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4); /* Subtle gradient background */
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Adding shadow for depth */
+    margin-top: 30px;
+  }
+
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+    font-family: 'Arial', sans-serif;
+  }
+
+  footer .icon {
+    font-size: 1.5rem;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
   </style>
 </head>
 <body>
@@ -215,8 +229,8 @@
   </div>
 
   <!-- Copyright Footer -->
-  <footer>
-    <p>&copy; Copyright for all this effort is reserved to you Prakritii (only).</p>
+   <footer>
+    <p><span class="icon">❤️</span>&copy; Copyright for all this effort is reserved to you Prakritii (only)..</p>
   </footer>
 
   <script>
