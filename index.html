@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hello Miss Arora !!!!</title>
   <style>
+    /* Existing styles */
     body {
       font-family: 'Arial', sans-serif;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
@@ -131,29 +132,29 @@
       color: #fff;
     }
 
-      footer {
-    background: linear-gradient(45deg, #ff9a9e, #fad0c4); /* Subtle gradient background */
-    color: #fff;
-    padding: 20px 0;
-    position: relative;
-    width: 100%;
-    text-align: center;
-    font-size: 1rem;
-    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1); /* Adding shadow for depth */
-    margin-top: 30px;
-  }
+    footer {
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+      color: #fff;
+      padding: 20px 0;
+      position: relative;
+      width: 100%;
+      text-align: center;
+      font-size: 1rem;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
 
-  footer p {
-    margin: 0;
-    font-size: 1rem;
-    font-family: 'Arial', sans-serif;
-  }
+    footer p {
+      margin: 0;
+      font-size: 1rem;
+      font-family: 'Arial', sans-serif;
+    }
 
-  footer .icon {
-    font-size: 1.5rem;
-    margin-right: 5px;
-    vertical-align: middle;
-  }
+    footer .icon {
+      font-size: 1.5rem;
+      margin-right: 5px;
+      vertical-align: middle;
+    }
 
   </style>
 </head>
@@ -168,6 +169,7 @@
       <div class="stop" style="left: 40%;" onclick="showView('favoriteThings')">Little things</div>
       <div class="stop" style="left: 70%;" onclick="showView('memories')">Details</div>
       <div class="stop" style="left: 100%;" onclick="showView('FromHeart')">From heart</div>
+      <div class="stop" style="left: 130%;" onclick="showSpecialFiles()">Special Files</div> <!-- New stop -->
       <div class="car">🚗</div>
     </div>
 
@@ -199,7 +201,6 @@
       <button onclick="goBack()">Go Back</button>
     </div>
 
-    <!-- From Heart View -->
     <div id="FromHeart" class="view">
         <h2>From heart ♥️</h2>
       <p>Prakritiii, a little gesture for you from my heart and skill as well. I hope u like it. I want u to remember me lifetime, M rahu na rahu but aap
@@ -211,6 +212,17 @@
       </p>
       <button onclick="goBack()">Go Back</button>
       <button onclick="openModal()">Click Here</button>
+    </div>
+
+    <!-- Special Files View -->
+    <div id="specialFiles" class="view" style="display: none;">
+      <h2>Special Files 🎧📸</h2>
+      <audio controls id="specialAudio" style="width: 100%; margin-bottom: 20px;">
+        <source src="path_to_your_audio_file.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+      </audio>
+      <img src="path_to_your_image.jpg" alt="Special Image" style="max-width: 100%; border-radius: 10px;">
+      <button onclick="goBack()">Go Back</button>
     </div>
 
     <!-- Modal for Apology -->
@@ -264,6 +276,20 @@
     function thankYou(response) {
       document.getElementById('apologyModal').style.display = 'none';
       document.getElementById('thankYouMessage').style.display = 'block';
+    }
+
+    // Show Special Files
+    function showSpecialFiles() {
+      const views = document.querySelectorAll('.view');
+      views.forEach(view => view.style.display = 'none');
+
+      const specialFilesView = document.getElementById('specialFiles');
+      specialFilesView.style.display = 'block';
+
+      const car = document.querySelector('.car');
+      const stop = document.querySelector('[onclick="showSpecialFiles()"]');
+      const stopPosition = stop.offsetLeft + (stop.offsetWidth / 2);
+      car.style.left = `${stopPosition}px`;
     }
   </script>
 </body>
